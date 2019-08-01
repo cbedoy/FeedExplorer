@@ -10,7 +10,8 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-activity-feed": "^0.8.9"
+    "react-native-activity-feed": "^0.8.9",
+    "react-native-activity-feed-core": "^0.8.9"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
