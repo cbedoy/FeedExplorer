@@ -22,9 +22,15 @@ import {
   Activity,
   StatusUpdateForm,
   LikeButton,
+  ReactionToggleIcon,
+  ReactionIcon,
+  ReactionIconBar,
+  RepostIcon, HeartIcon, ReplyIcon
 } from 'react-native-activity-feed';
 
 import client from './client.js'
+import Icon from 'react-native-ionicons'
+import DagActivity from './dagComponents/DagActivity'
 
 class App extends React.Component {
   constructor(props){
@@ -34,14 +40,24 @@ class App extends React.Component {
   }
 
   render(){
+    let apiKey = "n6dqxby6gcfa";
+    let appId = "49021";
+    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY2FybG9zIn0.wZ9km0IOKEcMfOAVhYs3iYmmJEmeRUKH-VO1QJ1d6No";
+
+
     return(
         <SafeAreaView style={{flex: 1}} forceInset={{ top: 'always' }}>
           <StreamApp
-              apiKey="n6dqxby6gcfa"
-              appId="49021"
-              userId={client.get_token()}
-              token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6IioiLCJhY3Rpb24iOiIqIiwiZmVlZF9pZCI6IioifQ.p31LovjFsSEfSrAv-Np0diPENZ3c21Rfr3nxBFn_ukA"
-          />
+              apiKey={apiKey}
+              appId={appId}
+              token={token}
+          >
+            <FlatFeed
+              feedGroup="user"
+              userId="carlos"
+              Activity = {<DagActivity />}
+            />
+          </StreamApp>
         </SafeAreaView>
     );
   }
